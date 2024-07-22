@@ -24,7 +24,6 @@ p{
     font-size: 200px;
     color: rgb(251, 231, 231);
 }
-
 .name-introduction{
     font-size: 50px;
     margin-bottom: 20px;
@@ -49,7 +48,6 @@ p{
 .name-emphasis:hover{
     color: rgb(251, 231, 231);
 }
-
 .about-me{
     padding-bottom: 30px;
 }
@@ -77,17 +75,14 @@ p{
     margin-left: 2vw;
     transition: color 0.15s, background-color 0.15s, border-color 0.15s, opacity 0.15s;
 }
-
 .buttons:hover{
     border-color: rgb(251, 231, 231);
     background-color: rgb(251, 231, 231);
     color: rgb(255, 124, 124);
 }
-
 .buttons:active{
     opacity: 80%;
 }
-
 .bottom-margins{
     margin-bottom: 5vw;
 }
@@ -104,7 +99,7 @@ font-style: normal;
     .greeting {
         font-size: 15vw;
     }
-    .greeting:hover {
+    .greeting:active {
         font-size: 18vw;
     }
     .name-introduction {
@@ -112,6 +107,9 @@ font-style: normal;
     }
     .name-emphasis {
         font-size: 10vw;
+    }
+    .name-emphasis:active{
+        color: rgb(251, 231, 231);
     }
     .buttons {
         font-size: 4vw;
