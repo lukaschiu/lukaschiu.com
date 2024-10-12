@@ -1,0 +1,125 @@
+body{
+    margin-top: 1vh;
+    /*background-color: rgb(56,27,67);*/
+    background-image: url(/images/l40lfr-images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+p{
+    color: whitesmoke;
+    font-family: Helvetica, sans-serif;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+}
+.valleyMetroLogo{
+    height: 10vh;
+    width: auto;
+    
+}
+.title{
+    font-size: 5vh;
+    text-decoration: underline;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+.info{
+    font-size: 2.2vh;
+    line-height: 150%;
+}
+.content-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.bus-title{
+    font-size: 4vh;
+    margin-bottom: 1vh;
+}
+.bus-photo{
+    width: 60vh;
+    height: auto;
+    border: solid;
+    border-color: whitesmoke;
+    border-width: 0.1vh;
+    transition: width 0.5s;
+}
+.bus-photo:hover{
+    width: 62vh;
+}
+.footer{
+    padding-bottom: 0vh;
+    margin-bottom: 0vh;
+}
+a:link{
+    color: whitesmoke;
+}
+a:visited{
+    color: whitesmoke;
+}
+a:hover{
+    color: lavender;
+}
+a:active{
+    color: lavenderblush;
+}
+
+.links{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    transition: color 0.2s;
+}
+.links:hover{
+    color: rgb(0,131,131);
+}
+.links:active{
+    color: whitesmoke;
+}
+
+@media screen and (max-width: 915px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    
+    .valleyMetroLogo {
+        height: 8vh;
+    }
+
+    .title {
+        font-size: 4vh;
+        text-align: center;
+    }
+
+    .info {
+        font-size: 2vh;
+        padding: 0 2vh;
+    }
+
+    .bus-photo {
+        width: 90vw;
+        height: auto;
+    }
+
+    .bus-photo:hover {
+        width: 92vw;
+    }
+
+    .bus-title {
+        font-size: 3.5vh;
+    }
+
+    .footer {
+        font-size: 2vh;
+        text-align: center;
+    }
+}
