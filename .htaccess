@@ -1,2 +1,2 @@
-DirectoryIndex /pages/404.html
-ErrorDocument 404 https://lukaschiu.com/404.html
+DirectoryIndex index.html
+ErrorDocument 404 /pages/404/
