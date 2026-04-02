@@ -39,6 +39,19 @@ async function getLocations(){
         }
         const json = await response.json();
         iconLayer.clearLayers();
+
+        //DOM
+        const activeRailCountID = document.getElementById("activeRailCount");
+        const activeBusCountID = document.getElementById("activeBusCount");
+        const dataUpdateTimeID = document.getElementById("dataUpdateTime");
+        //Count for vehicles
+        var activeRailCount = 0;
+        var activeBusCount = 0;
+
+        //Update time:
+        const time = new Date();
+        const timeString = time.toLocaleTimeString();
+
         json.entity.forEach(v => {
             const latitude = v.vehicle?.position?.latitude;
             const longitude = v.vehicle?.position?.longitude;
@@ -279,6 +292,7 @@ async function getLocations(){
                 if(routeId == undefined){}
                 else{
                     L.marker([latitude, longitude], {icon: vmLRV}).addTo(iconLayer).bindPopup(`<strong>${vehicleType}</strong> (${idNum})<br>${routeDisplay}<br>${finalDestinationDisplay}`);
+                    activeRailCount++;
                 }
             }
             else if(routeId == undefined){
@@ -287,15 +301,25 @@ async function getLocations(){
             }
             else if(rapidRoutes.includes(routeId)){
                 L.marker([latitude, longitude], {icon: vmBusIconExpressRapid}).addTo(iconLayer).bindPopup(`<strong>${vehicleType}</strong> (${idNum})<br>${routeDisplay}<br>${finalDestinationDisplay}`);
+                activeBusCount++;
             }
             else if(circulators.includes(routeId)){
                 L.marker([latitude, longitude], {icon: vmBusIconNeighborhood}).addTo(iconLayer).bindPopup(`<strong>${vehicleType}</strong> (${idNum})<br>${routeDisplay}<br>${finalDestinationDisplay}`);
+                activeBusCount++;
             }
             else{
                 L.marker([latitude, longitude], {icon: vmBusIcon}).addTo(iconLayer).bindPopup(`<strong>${vehicleType}</strong> (${idNum})<br>${routeDisplay}<br>${finalDestinationDisplay}`);
+                activeBusCount++;
             }
         });
-        console.log(`Map Updated`);
+        console.log(`Map Updated at ${timeString}`);
+        console.log(`Active Rail Count: ` + activeRailCount);
+        console.log(`Active Bus Count: ` + activeBusCount);
+
+        activeRailCountID.innerText = `Current active # of rail vehicles: ${activeRailCount}`;
+        activeBusCountID.innerText = `Current active # of buses: ${activeBusCount}`;
+        dataUpdateTimeID.innerText = `Data updates every 30 seconds. (Last updated at ${timeString})`;
+        
     }
     catch(error){
         console.error(error.message);
@@ -303,4 +327,4 @@ async function getLocations(){
 }
 
 getLocations();
-setInterval(getLocations, 20000)
+setInterval(getLocations, 30000)
