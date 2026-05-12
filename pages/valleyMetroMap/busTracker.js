@@ -109,6 +109,9 @@ async function getLocations(){
             else if (idNum >= 2401 && idNum <= 2420) {
                 vehicleType = `2024 Gillig Low Floor CNG 40'`
             }
+            else if (idNum >= 2501 && idNum <= 2520) {
+                vehicleType = `2026 Gillig Low Floor CNG 40'`
+            }
             else if (idNum >= 3003 && idNum <= 3005) {
                 vehicleType = `2016 Ford E-450 (Starcraft Allstar)`
             } 
